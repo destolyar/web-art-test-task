@@ -1,0 +1,19 @@
+@import '../mixins/utils.scss';
+
+.admin-links-container {
+    display: flex;
+    align-items: center;
+
+    &__link {
+        transition: .3s;
+        margin-left: 20px;
+        
+        @include phones {
+            margin-left: 10px;
+        }
+        
+        &:hover {
+            color: $primary-link-color;
+        }
+    }
+}

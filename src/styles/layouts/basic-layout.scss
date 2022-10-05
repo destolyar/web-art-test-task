@@ -1,0 +1,58 @@
+@import '../mixins/utils.scss';
+
+.basic-layout {
+    &__header {
+        padding: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(226, 226, 226);
+
+        @include tablets {
+            padding: 40px;
+        }
+
+        @include phones {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        &__actions {
+            display: flex;
+            align-items: center;
+
+            @include phones {
+                margin-top: 20px;
+            }
+            
+            &__button {
+                margin-left: 20px;
+                padding: 10px 20px;
+                border: 0;
+                border-radius: 10px;
+                color: $secondary-text-color;
+                background-color: $primary-button-background;
+
+                @include phones {
+                    margin-left: 10px;
+                }
+    
+                &:hover {
+                    @include default-hover;
+                }
+            }
+        }
+    }   
+    
+    &__container {
+        padding: 60px;
+
+        @include tablets {
+            padding: 40px;
+        }
+
+        @include phones {
+            padding: 20px;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import '../mixins/utils.scss';
+
+.form {
+    width: 100%;
+
+    &__input, &__submit {
+        width: 100%;
+
+        @include phones {
+            height: 30px;
+        }
+    }
+
+    &__input {
+        height: 40px;
+    }
+
+    &__submit {
+        height: 50px;
+        border: 0px solid transparent;
+        border-radius: 10px;
+        color: $secondary-text-color;
+        background-color: $primary-button-background;
+
+        &:hover {
+            @include default-hover;
+        }
+    }
+}

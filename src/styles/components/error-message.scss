@@ -1,0 +1,11 @@
+.error-container {
+    position: relative;
+    color: red;
+    overflow: hidden;
+    transition: .5s;
+    margin: 10px 0;
+    
+    &__error {
+        font-size: 1rem;
+    }
+}

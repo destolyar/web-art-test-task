@@ -5,8 +5,6 @@ import { RootState } from "../store/store"
 
 
 export const ProfileFields: FC = () => {
-    //Todo:
-    // Change {} as UserInterface
     const currentUser: UserInterface = useSelector((state: RootState) => state.auth.user) || {} as UserInterface
 
     return(

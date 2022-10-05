@@ -1,36 +1,17 @@
-import { FC, useEffect, useState } from "react"
-import firestore from '../firestore'
-import { collection, getDocs } from "firebase/firestore"
+import { FC } from "react"
+import { useSelector } from "react-redux"
+import { UserInterface } from "../interfaces/User"
+import { RootState } from "../store/store"
 
-interface ProfileFields {
-    name: string,
-    surname: string,
-    dateOfBirth: string,
-    username: string,
-    email: string,
-    password: string
-}
 
 export const ProfileFields: FC = () => {
-    const [users, setUsers] = useState<any>()
-
-    useEffect(() => {
-        const getUsers = async () => {
-            const usersSnapshot = await getDocs(collection(firestore, 'users'))
-            let users: Array<any> = []
-            usersSnapshot.forEach((doc) => users.push(doc.data()));
-            setUsers(users)
-        }
-
-        getUsers()
-    }, [])
-
-    useEffect(() => {
-        console.log(users)
-    }, [users])
+    //Todo:
+    // Change {} as UserInterface
+    const currentUser: UserInterface = useSelector((state: RootState) => state.auth.user) || {} as UserInterface
 
     return(
         <form className="form" autoComplete="on">
+            <h1>{currentUser.name}</h1>
             <input type="text" />
             <input type="text" />
             <input type="text" />

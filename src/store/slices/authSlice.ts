@@ -7,7 +7,16 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-    user: {} as UserInterface
+    user: {
+        id: "ldHbyIitQv5h1YGfkonK",
+        name: "Vladislav",
+        surname: "Metik",
+        username: "destolyar",
+        role: "admin",
+        email: "vladislavmetik@icloud.com",
+        dateOfBirth: "30.03.2002",
+        password: "Adgjmptw123@"
+    } as UserInterface
 }
 
 export const authSlice = createSlice({

@@ -1,4 +1,4 @@
-import { collection, DocumentData, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../firebase";
 import { UserInterface } from "../interfaces/User";
 
@@ -7,6 +7,6 @@ export const getUsers = async () => {
     const usersSnapshot = getDocs(usersCollection);
     const res: UserInterface[] = [];
     
-    (await usersSnapshot).forEach(item => res.push(item.data() as UserInterface))
+    (await usersSnapshot).forEach(item => res.push(Object.assign(item.data(), {id: item.id}) as UserInterface))
     return res
 }

@@ -1,6 +1,6 @@
+import '../styles/components/form.scss'
 import { useForm } from "react-hook-form"
 import { ErrorMessage } from "./ErrorMessage"
-import '../styles/components/form.scss'
 import { checkUser } from "../utils/checkUser"
 import { getUsers } from "../utils/getUsers"
 import { useEffect, useState } from "react"
@@ -30,7 +30,12 @@ export const LoginForm = () => {
             const { email, password } = getValues()
             const res = checkUser(users, email, password)
             dispatch(setUser({user: res}))
-            !!res ? navigate("/profile") : setError('password', {message: "Incorrect email or password"})
+
+            if(res) {
+                navigate("/profile")
+            } else {
+                setError('password', {message: "Incorrect email or password"})
+            }
         })}>
             <input className="form__input" {...register("email", {
                 required: "This field is required",

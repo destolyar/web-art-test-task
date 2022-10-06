@@ -1,10 +1,9 @@
-import { getValue } from "@testing-library/user-event/dist/utils"
+import '../styles/components/profile-fields.scss'
 import { FC } from "react"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
 import { UserInterface } from "../interfaces/User"
 import { RootState } from "../store/store"
-import '../styles/components/profile-fields.scss'
 import { changeUser } from "../utils/changeUser"
 
 export const ProfileFields: FC = () => {

@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { AdminLinks } from './components/AdminLinks';
 import { AdminPanel } from './pages/AdminPanel';
 import { Login } from './pages/Login';
 import { Profile } from './pages/Profile';

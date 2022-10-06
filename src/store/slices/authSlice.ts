@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { UserInterface } from "../../interfaces/User"
+import { checkLocalstorage } from "../../utils/checkLocalstorage"
 
 
 interface AuthState {
@@ -7,7 +8,7 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-    user: null
+    user: checkLocalstorage()
 }
 
 export const authSlice = createSlice({
@@ -21,6 +22,7 @@ export const authSlice = createSlice({
         },
         clearUser: (state) => {
             state.user = null
+            localStorage.setItem("user", JSON.stringify(null))
         }
     },
   })

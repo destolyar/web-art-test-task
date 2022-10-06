@@ -2,7 +2,6 @@
 
 .profile-fields {
     width: 400px;
-    border-bottom: 1px solid rgb(226, 226, 226);
     
     @include tablets {
        margin: 0 auto; 
@@ -15,7 +14,9 @@
     &__container {
         display: flex;
         flex-direction: column;
+        padding: 20px;
         border: 1px solid rgb(226, 226, 226);
+        border-radius: 10px;
 
         &__legend {
             font-size: 20px;

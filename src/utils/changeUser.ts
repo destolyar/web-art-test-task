@@ -1,4 +1,4 @@
-import { collection, doc, setDoc } from "firebase/firestore"
+import { doc, setDoc } from "firebase/firestore"
 import { firestore } from "../firebase"
 import { UserInterface } from "../interfaces/User"
 

@@ -45,7 +45,7 @@ export const ProfileFields: FC = () => {
                 })}/>
                                 
                 <label className="profile-fields__container__label" htmlFor="email">Email</label>
-                <input className="profile-fields__container__item" type="text" id="email" {...register("email", {
+                <input className="profile-fields__container__item" type="email" id="email" {...register("email", {
                     required: true,
                     minLength: 4,
                 })}/>

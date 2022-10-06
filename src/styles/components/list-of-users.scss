@@ -1,0 +1,15 @@
+@import '../mixins/utils.scss';
+
+.list-of-users {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include tablets {
+        gap: 40px;
+    }
+
+    @include phones {
+        gap: 20px
+    }
+}

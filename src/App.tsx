@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AdminLinks } from './components/AdminLinks';
 import { AdminPanel } from './pages/AdminPanel';
 import { Login } from './pages/Login';
 import { Profile } from './pages/Profile';
+import { AdminRoutes } from './routes/AdminRouter';
 import { PrivateRoutes } from './routes/PrivateRoutes';
 import './styles/App.scss';
 
@@ -13,7 +15,9 @@ export const App = () => {
           <Route element={<PrivateRoutes/>}>
             <Route path='/' element={<Profile/>}/>
             <Route path='/profile' element={<Profile/>}/>
-            <Route path='/admin' element={<AdminPanel/>}/>
+            <Route element={<AdminRoutes/>}>
+              <Route path='/admin' element={<AdminPanel/>}/>
+            </Route>
           </Route>
       </Routes>
     </BrowserRouter>
